@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h2 class="text-center">{{ isEdit ? 'Editar Auto' : 'Agregar Auto' }}</h2>
+
+  <form (ngSubmit)="saveCar()">
+    <div class="mb-3">
+      <label class="form-label">Nombre del Auto</label>
+      <input type="text" class="form-control" [(ngModel)]="car.name" name="name" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Precio</label>
+      <input type="number" class="form-control" [(ngModel)]="car.price" name="price" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{ isEdit ? 'Actualizar' : 'Guardar' }}
+    </button>
+    <a routerLink="/cars" class="btn btn-secondary ms-2">Cancelar</a>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h2 class="text-center">List of Cars</h2>
+    <a routerLink="/car/add" class="btn btn-success mb-3">Agregar Auto</a>
+
+    <table class="table table-striped mt-3">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{ car.id }}</td>
+            <td>{{ car.name }}</td>
+            <td>{{ car.price }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="deleteCar(car.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
